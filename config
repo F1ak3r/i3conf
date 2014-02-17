@@ -169,6 +169,9 @@ font pango:DejaVu Sans Mono 8
 #desktop wallpaper
 exec --no-startup-id feh --bg-scale /home/david/Pictures/1390373800365.jpg
 
+#lock screen
+bindsym Control+Mod1+l exec i3lock -c 111111
+
 #workspaces
 workspace_auto_back_and_forth yes
 bindsym Control+Mod4+l workspace next
