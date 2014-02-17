@@ -167,7 +167,7 @@ new_window pixel 4
 font pango:DejaVu Sans Mono 8
 
 #desktop wallpaper
-exec --no-startup-id feh --bg-scale /home/david/Pictures/1390373800365.jpg
+exec --no-startup-id feh --bg-scale /home/david/Pictures/1621090.jpg
 
 #lock screen
 bindsym Control+Mod1+l exec i3lock -c 111111
@@ -179,12 +179,22 @@ bindsym Control+Mod4+h workspace prev
 bindsym Control+Mod4+Shift+l move container to workspace next
 bindsym Control+Mod4+Shift+h move container to workspace prev
 
+#volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -D pulse set Master +1 toggle
+
 #execute programs
 bindsym Mod1+F12 exec scrot '%d.%m.%Y_%H.%M_screenshot.png' -e 'mv $f ~/Screenshots/' 
-bindsym Mod1+p exec mpc toggle
-bindsym Mod1+e exec nemo
-bindsym Mod1+c exec google-chrome
+#bindsym Mod1+p exec mpc toggle
+bindsym Mod4+g exec gvim
+bindsym Mod4+x exec nemo
+bindsym Mod4+c exec google-chrome
 
 #make GIMP work
 for_window [class="Gimp"] border normal
 for_window [class="Gimp"] floating enable
+
+#make Steam work
+for_window [class="Steam"] border normal
+for_window [class="Steam"] floating enable
