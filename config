@@ -203,3 +203,7 @@ for_window [class="Gimp"] floating enable
 #make Steam work
 for_window [class="Steam"] border normal
 for_window [class="Steam"] floating enable
+
+#chat workspace
+bindsym Mod4+p workspace chat
+assign [class="Pidgin"] chat
