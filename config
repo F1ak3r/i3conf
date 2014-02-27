@@ -207,3 +207,7 @@ for_window [class="Steam"] floating enable
 #chat workspace
 bindsym Mod4+p workspace chat
 assign [class="Pidgin"] chat
+
+#email workspace
+bindsym Mod4+m workspace email
+assign [Class="Thunderbird"] email
