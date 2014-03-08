@@ -171,6 +171,9 @@ font pango:DejaVu Sans Mono 8
 #exec --no-startup-id feh --bg-scale /home/david/.i3/viva.jpg
 exec --no-startup-id feh --randomize --bg-fill /home/david/Pictures/Wallpapers/*
 
+#compositor
+exec --no-startup-id compton --config /home/david/.i3/compton.conf -b
+
 #lock screen
 bindsym Control+Mod1+l exec i3lock -i /home/david/.i3/i3lock.png
 
