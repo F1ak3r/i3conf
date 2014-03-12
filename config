@@ -188,6 +188,10 @@ bindsym Control+Mod4+Shift+Right move container to workspace next
 bindsym Control+Mod4+Shift+h move container to workspace prev
 bindsym Control+Mod4+Shift+Left move container to workspace prev
 
+#scratchpad
+bindsym Mod4+minus move scratchpad
+bindsym Mod4+Shift+minus scratchpad show
+
 #volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
