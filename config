@@ -208,9 +208,9 @@ bindsym Mod4+c exec google-chrome
 for_window [class="Gimp"] border normal
 for_window [class="Gimp"] floating enable
 
-#make Steam work
-for_window [class="Steam"] border normal
-for_window [class="Steam"] floating enable
+#Steam workspace
+bindsym Mod4+z workspace steam
+assign [class="Steam"] steam
 
 #chat workspace
 bindsym Mod4+p workspace chat
