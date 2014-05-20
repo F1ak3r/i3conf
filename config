@@ -162,7 +162,7 @@ bar {
 exec i3-config-wizard
 
 # window border style
-new_window pixel 4
+new_window pixel 2
 
 #desktop wallpaper
 exec --no-startup-id feh --randomize --bg-fill /home/david/Pictures/Wallpapers/*
@@ -200,8 +200,8 @@ bindsym XF86AudioMute exec amixer -D pulse set Master +1 toggle
 bindsym Mod1+F12 exec scrot '%d.%m.%Y_%H.%M_screenshot.png' -e 'mv $f ~/Screenshots/' 
 bindsym Mod1+p exec mpc toggle
 bindsym Mod4+g exec gvim
-#bindsym Mod4+x exec nemo
-bindsym Mod4+x exec thunar
+bindsym Mod4+x exec nemo
+#bindsym Mod4+x exec thunar
 bindsym Mod4+c exec google-chrome
 
 #make GIMP work
