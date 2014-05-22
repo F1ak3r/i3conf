@@ -10,7 +10,7 @@ class Py3status:
     def _get_temp(self):
         import urllib2
         response = urllib2.urlopen('http://www.ru.ac.za/static/weather/ARCHIVE/CURRENTDATA/public-5m.dat')
-        temp = response.read().split(",")[5]+"°C"
+        temp = (response.read().split(",")[5]).split(".")[0]+"°C"
         return temp
 
     def window_title(self, json, i3status_config):
