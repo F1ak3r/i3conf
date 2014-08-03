@@ -13,7 +13,7 @@ class Py3status:
         temp = (response.read().split(",")[5]).split(".")[0]+"°C"
         return temp
 
-    def window_title(self, json, i3status_config):
+    def _window_title(self, json, i3status_config):
         """
         This gets executed.
         """
