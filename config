@@ -146,6 +146,19 @@ bindsym Mod4+r mode "resize"
 bar {
         status_command py3status -c ~/.i3/status.conf -i ~/.i3/pystatus
 	position top
+	output VGA-0
+	tray_output none
+	font pango:Ubuntu, Icons 10
+	colors {
+		background #232323
+		statusline #DCDCDC
+	}
+}
+
+bar {
+        status_command py3status -c ~/.i3/status-2.conf
+	position top
+	output LVDS
 	tray_output none
 	font pango:Ubuntu, Icons 10
 	colors {
@@ -191,6 +204,10 @@ bindsym Control+Mod4+Shift+Right move container to workspace next
 bindsym Control+Mod4+Shift+h move container to workspace prev
 bindsym Control+Mod4+Shift+Left move container to workspace prev
 
+#move workspace to output
+bindsym Mod4+y move workspace to output left
+bindsym Mod4+u move workspace to output right
+
 #scratchpad
 bindsym Mod4+minus move scratchpad
 bindsym Mod4+Shift+minus scratchpad show
@@ -213,6 +230,10 @@ bindsym Mod4+n exec firefox
 for_window [class="Gimp"] border normal
 for_window [class="Gimp"] floating enable
 
+#make vigor work
+for_window [class="vigor"] border normal
+for_window [class="vigor"] floating enable
+
 #make UNetbootin work
 for_window [class="UNetbootin"] border normal
 for_window [class="UNetbootin"] floating enable
@@ -221,9 +242,11 @@ for_window [class="UNetbootin"] floating enable
 bindsym Mod4+z workspace steam
 assign [class="Steam"] steam
 
-#chat workspace
+#chat workspace and Google Hangouts
 bindsym Mod4+p workspace chat
 assign [class="Pidgin"] chat
+for_window [title="Hangouts"] move container to workspace chat
+for_window [window_role="pop-up"] floating enable
 
 #email workspace
 bindsym Mod4+m workspace email
