@@ -147,30 +147,13 @@ bindsym Mod4+r mode "resize"
 bar {
         status_command $HOME/.i3/i3conky.sh
 	position top
-	tray_output none
+	tray_output primary
 	font pango:Ubuntu, Icons 10
 	colors {
 		background #333333
 		statusline #CCCCCC
-		#focused_workspace  #111111 #DCDCDC
-		#active_workspace   #ffffff #994455
-		#inactive_workspace #888888 #994455
-		#urgent_workspace   #ffffff #900000
 	}
 }
-
-#bar {
-#        status_command py3status -c ~/.i3/status-2.conf
-#	position top
-#	output LVDS
-#	tray_output none
-#	font pango:Ubuntu, Icons 10
-#	colors {
-#		background #232323
-#		statusline #DCDCDC
-#	}
-#}
-
 
 # class                 border  backgr. text    indicator
 #client.focused          #dcdcdc #dcdcdc #ffffff #2e9ef4
@@ -192,24 +175,21 @@ exec i3-config-wizard
 new_window pixel 1
 #gap_size 15
 
-#Compton
-#exec --no-startup-id compton --config /home/david/.i3/compton.conf -b
-
 #vmware helper
-exec --no-startup-id vmware-user
+#exec --no-startup-id vmware-user
 
 #desktop wallpaper
-#exec --no-startup-id feh --randomize --bg-scale /home/david/Pictures/Wallpapers/* /home/david/Pictures/Wallpapers/*
-exec --no-startup-id nitrogen --restore
-
-#easystroke
-exec --no-startup-id easystroke hide
+exec --no-startup-id feh --randomize --bg-scale $HOME/Pictures/Wallpapers/* $HOME/Pictures/Wallpapers/*
+#exec --no-startup-id nitrogen --restore
 
 #font
 font pango:Ubuntu, Icons 10
 
 #lock screen
-bindsym Control+Mod1+l exec i3lock -c '#000000' -i /home/david/.i3/i3lock.png
+bindsym Control+Mod1+l exec i3lock -c '#000000' -i $HOME/.i3/i3lock.png
+
+#nm-applet (need system tray ;_;)
+exec --no-startup-id nm-applet
 
 #workspaces
 workspace_auto_back_and_forth yes
@@ -231,16 +211,17 @@ bindsym Mod4+minus move scratchpad
 bindsym Mod4+Shift+minus scratchpad show
 
 #volume control
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -D pulse set Master +1 toggle
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+#bindsym XF86AudioMute exec amixer -D pulse set Master +1 toggle
+bindsym Mod4+F5 exec amixer -c 1 set Master 2dB- 
+bindsym Mod4+F6 exec amixer -c 1 set Master 2dB+ 
 
 #execute programs
-bindsym Mod1+F12 exec scrot '%d.%m.%Y_%H.%M_screenshot.png' -e 'mv $f ~/Screenshots/' 
+bindsym Mod1+F12 exec scrot '%d.%m.%Y_%H.%M_screenshot.png'
 bindsym Mod1+p exec mpc toggle
 bindsym Mod4+g exec gvim
 bindsym Mod4+x exec nemo
-#bindsym Mod4+x exec thunar
 bindsym Mod4+c exec google-chrome
 bindsym Mod4+n exec firefox
 
@@ -248,22 +229,11 @@ bindsym Mod4+n exec firefox
 for_window [class="Gimp"] border normal
 for_window [class="Gimp"] floating enable
 
-#make vigor work
-for_window [class="vigor"] border normal
-for_window [class="vigor"] floating enable
-
-#make UNetbootin work
-for_window [class="UNetbootin"] border normal
-for_window [class="UNetbootin"] floating enable
-
 #Steam workspace
 bindsym Mod4+z workspace steam
 assign [class="Steam"] steam
 
-#chat workspace and Google Hangouts
-bindsym Mod4+p workspace chat
-assign [class="Pidgin"] chat
-for_window [title="Hangouts"] move container to workspace chat
+#Google Hangouts
 for_window [window_role="pop-up"] floating enable
 
 #email workspace
