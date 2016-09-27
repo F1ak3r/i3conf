@@ -39,20 +39,24 @@ TEXT
 [
 	{ "full_text" : "${exec xprop -id $(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}') | awk '/_NET_WM_NAME/{$1=$2="";print}' | tr -s ' ' | awk '{print substr($0, 3, length($0) - 3)}'} "
 		 , "color" : "\#eeeeee" },
-	{ "full_text" : "♬ ${mpd_smart} [${mpd_status}]"
+	{ "full_text" : "♬ ${exec $HOME/sh/gmdp-playing}"
 		, "color" : "\#aaccaa" },
-	{ "full_text" : "☊ ${exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | grep %}"
-		, "color" : "\#aaffaa" },
-	{ "full_text" : "${if_up eth0}${addr eth0}${endif}${if_up wlan0}${wireless_essid wlan0} ${addr wlan0} ‣${wireless_link_qual wlan0}${endif}"
+	{ "full_text" : "☊ ${exec pactl list sinks | grep "Volume: " | cut -d " " -f6 | grep %}"
+		, "color" : "\#eeeeee" },
+	{ "full_text" : "🔃 ${if_up eth0}${addr eno1}${endif}${if_up wlp3s0}${wireless_essid wlp3s0} ${addr wlp3s0} ‣${wireless_link_qual wlp3s0}${endif}"
 		, "color" : "\#aaaaff" },
-	{ "full_text" : "√ ${fs_free /home}" 
+	{ "full_text" : "⌂ ${fs_free /home}" 
+		 , "color" : "\#eeeeee" },
+	{ "full_text" : "√ ${fs_free /}" 
+		 , "color" : "\#dd99dd" },
+	{ "full_text" : "🖴 ${fs_free /media/Data}" 
 		 , "color" : "\#eeeeee" },
 	{ "full_text" : "↺ $cpu%"
 		 , "color" : "\#ffaaaa" },
 	{ "full_text" : "⌘ ${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input | cut -c-2}°C"
-		 , "color" : "\#eeeeee" },
-	{ "full_text" : "⚡ ${execi 60 acpi -b | awk '{print$4$5}' | sed -e 's/,/ /'}"
-		, "color" : "\#aaaaaa" },
-	{ "full_text" : "${time %e %b %Y - %I:%M}"
+		 , "color" : "\#cc9022" },
+	{ "full_text" : "📅 ${time %e %b %Y - %I:%M}"
 		, "color" : "\#eeeeee" }
 ],
+
+# { "full_text" : "♬ ${mpd_smart} [${mpd_status}]" , "color" : "\#aaccaa" },
