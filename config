@@ -224,7 +224,7 @@ bindsym Mod4+F5 exec amixer -c 1 set Master 2dB-
 bindsym Mod4+F6 exec amixer -c 1 set Master 2dB+ 
 
 #execute programs
-bindsym Mod1+F12 exec scrot '%d.%m.%Y_%H.%M_screenshot.png'
+bindsym Mod1+F12 exec scrot '%Y.%m.%d_%H.%M_screenshot.png'
 bindsym Mod1+p exec mpc toggle
 bindsym Mod4+x exec nemo
 bindsym Mod4+c exec google-chrome
