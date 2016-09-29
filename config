@@ -209,8 +209,10 @@ bindsym Control+Mod4+Shift+h move container to workspace prev
 bindsym Control+Mod4+Shift+Left move container to workspace prev
 
 #move workspace to output
-bindsym Mod4+y move workspace to output left
-bindsym Mod4+u move workspace to output right
+bindsym Mod4+t move workspace to output left
+bindsym Mod4+y move workspace to output down
+bindsym Mod4+u move workspace to output up
+bindsym Mod4+i move workspace to output right
 
 #scratchpad
 bindsym Mod4+minus move scratchpad
@@ -239,10 +241,12 @@ for_window [class="vlc"] floating enable
 
 #Steam workspace
 bindsym Mod4+z workspace steam
+bindsym Mod4+Shift+z move container to workspace steam
 assign [class="Steam"] steam
 
 #Google Music workspace
 bindsym Mod4+m workspace music
+bindsym Mod4+Shift+m move container to workspace music
 assign [class="google play music desktop player"] music
 
 #Google Hangouts
