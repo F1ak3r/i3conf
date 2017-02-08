@@ -41,7 +41,7 @@ TEXT
 		 , "color" : "\#eeeeee" },
 	{ "full_text" : "♬ ${exec $HOME/sh/gmdp-playing}"
 		, "color" : "\#aaccaa" },
-	{ "full_text" : "☊ ${exec pactl list sinks | grep "Volume: " | cut -d " " -f6 | grep %}"
+	{ "full_text" : "☊ ${exec amixer -c2 sget Headphone | tail -n 1 | cut -d[ -f2 | sed 's/\]//'}"
 		, "color" : "\#eeeeee" },
 	{ "full_text" : "🔃 ${if_up eth0}${addr eno1}${endif}${if_up wlp3s0}${wireless_essid wlp3s0} ${addr wlp3s0} ‣${wireless_link_qual wlp3s0}${endif}"
 		, "color" : "\#aaaaff" },

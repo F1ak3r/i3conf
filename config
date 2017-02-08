@@ -222,8 +222,8 @@ bindsym Mod4+Shift+minus scratchpad show
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 #bindsym XF86AudioMute exec amixer -D pulse set Master +1 toggle
-bindsym Mod4+F5 exec amixer -c 1 set Master 2dB- 
-bindsym Mod4+F6 exec amixer -c 1 set Master 2dB+ 
+bindsym Mod4+F5 exec amixer -c 2 set Headphone 2dB- 
+bindsym Mod4+F6 exec amixer -c 2 set Headphone 2dB+ 
 
 #execute programs
 bindsym Mod1+F12 exec scrot '%Y.%m.%d_%H.%M_screenshot.png'
