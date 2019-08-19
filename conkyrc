@@ -38,25 +38,25 @@ TEXT
 
 [
 	{ "full_text" : "${exec xprop -id $(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}') | awk '/_NET_WM_NAME/{$1=$2="";print}' | tr -s ' ' | awk '{print substr($0, 3, length($0) - 3)}'} "
-		 , "color" : "\#eeeeee" },
-	{ "full_text" : "♬ ${exec $HOME/sh/gmdp-playing}"
+		 , "color" : "\#d8dee9" },
+	{ "full_text" : "♬ ${exec $HOME/sh/spotify-playing}"
 		, "color" : "\#aaccaa" },
-	{ "full_text" : "☊ ${exec amixer -c2 sget Headphone | tail -n 1 | cut -d[ -f2 | sed 's/\]//'}"
-		, "color" : "\#eeeeee" },
+	{ "full_text" : "☊ ${exec amixer -c1 sget Master | tail -n 1 | cut -d[ -f2 | sed 's/\]//'}"
+		, "color" : "\#d8dee9" },
 	{ "full_text" : "🔃 ${if_up eth0}${addr eno1}${endif}${if_up wlp3s0}${wireless_essid wlp3s0} ${addr wlp3s0} ‣${wireless_link_qual wlp3s0}${endif}"
-		, "color" : "\#aaaaff" },
+		, "color" : "\#6699cc" },
 	{ "full_text" : "⌂ ${fs_free /home}" 
-		 , "color" : "\#eeeeee" },
+		 , "color" : "\#d8dee9" },
 	{ "full_text" : "√ ${fs_free /}" 
-		 , "color" : "\#dd99dd" },
+		 , "color" : "\#c594c5" },
 	{ "full_text" : "🖴 ${fs_free /media/Data}" 
-		 , "color" : "\#eeeeee" },
+		 , "color" : "\#d8dee9" },
 	{ "full_text" : "↺ $cpu%"
-		 , "color" : "\#ffaaaa" },
+		 , "color" : "\#ab7997" },
 	{ "full_text" : "⌘ ${exec cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input | cut -c-2}°C"
-		 , "color" : "\#cc9022" },
+		 , "color" : "\#f99157" },
 	{ "full_text" : "📅 ${time %e %b %Y - %I:%M}"
-		, "color" : "\#eeeeee" }
+		, "color" : "\#d8dee9" }
 ],
 
 # { "full_text" : "♬ ${mpd_smart} [${mpd_status}]" , "color" : "\#aaccaa" },
